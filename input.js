@@ -26,7 +26,15 @@ module.exports = {
     return ext && config.IMAGE_EXTENSIONS.indexOf(ext) > -1;
   },
 
+  exists: function (inputPath) {
+    return jetpack.exists(inputPath);
+  },
+
   isDirectory: function (inputPath) {
     return jetpack.exists(inputPath) === "dir";
+  },
+
+  isFile: function (inputPath) {
+    return jetpack.exists(inputPath) === "file";
   },
 };

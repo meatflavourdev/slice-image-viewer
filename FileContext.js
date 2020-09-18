@@ -1,37 +1,24 @@
-const input = require("./input");
 const jetpack = require("fs-jetpack");
 const path = require("path");
-
-let files = [];
-let fileIndex = 0;
+const input = require("./input");
+const Directory = require("./Directory");
 
 class FileContext {
-  constructor(inputPath = "") {
+  constructor(inputPath) {
+    if(!inputPath) throw new Error('Input is empty');
     this.inputPath = input.abslolutePath(inputPath);
-    this.initContext();
+    this.existsType = input.exists(this.inputPath);
+    this.isDisplayableImage = input.isDisplayableImage(this.inputPath);
+    // Check that the inputPath exists
+    if(!this.existsType) throw new Error('Input path does not exist');
+    // Check that the inputPath is a supported file or directory
+    if(this.existsType !== 'dir' && !this.isDisplayableImage) throw new Error('Unsupported file type');
+    // Build the directory object
+    this.directory = new Directory(this.inputPath);
+    // Check that directory contains supported files
+    if(this.directory.size <= 0) throw new Error('Directory contains no supported files');
+    // Return the file context object
     return this;
-  }
-
-  initContext() {
-    if (jetpack.exists(this.inputPath)) {
-      if (input.isDisplayableImage(this.inputPath)) {
-        this.inputFile = path.basename(this.inputPath);
-        this.inputDir = path.dirname(this.inputPath);
-      }
-      if (input.isDirectory(this.inputDir)) {
-        this.files = jetpack
-          .list(this.inputDir)
-          .filter(input.isDisplayableImage)
-          .map((fileName) => path.join(this.inputDir, fileName));
-      }
-      if (this.files.length && this.inputFile) {
-        this.fileIndex = this.files.indexOf(
-          path.join(this.inputDir, this.inputFile)
-        );
-        return true;
-      }
-    }
-    return false;
   }
 }
 
