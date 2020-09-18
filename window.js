@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { BrowserWindow } = require("electron");
 
 module.exports = {
   createMainWindow() {
