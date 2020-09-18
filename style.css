@@ -1,0 +1,51 @@
+html {
+  background-color: rgba(0,0,0,0.6);
+}
+
+body {
+  overflow: hidden;
+}
+
+#imageCanvas {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  max-width: 100%;
+  max-height:100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+  /* Debug styles */
+  /* outline: red dotted 1px;
+  z-index: 50; */
+}
+
+#imageView {
+  position: relative;
+  --image-width: 0px;
+  --image-height: 0px;
+  --image-zoom: 1;
+  --size-width: calc(var(--image-width) * var(--image-zoom));
+  --size-height: calc(var(--image-height) * var(--image-zoom));
+  --position-x: 50%;
+  --position-y: 50%;
+  top: calc(var(--position-y) - var(--size-height)/2);
+  left: calc(var(--position-x) - var(--size-width)/2);
+  width: var(--size-width);
+  height: var(--size-height);
+  margin: 0;
+  background-color: #2d3442;
+  /* background-image: url("example/image-gif-02.gif"); */
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 5px 5px 20px -3px rgba(0,0,0,0.6);
+  /* Transition Animations */
+  transition: 0.5s ease-out all; 
+  -webkit-transition: 0.5s ease-out all;
+  /* Debug styles */
+  /*z-index: -5;*/
+}
