@@ -24,6 +24,10 @@ app.on("ready", function () {
 
   mainWindow = createMainWindow();
 
+  mainWindow.webContents.on("did-finish-load", () => {
+    mainWindow.webContents.send("file-context-data", inputContext);
+  });
+
   if (process.env.NODE_ENV === "development") {
     mainWindow.openDevTools();
   }
