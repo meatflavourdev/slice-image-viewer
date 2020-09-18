@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const { createMainWindow } = require("./window");
 const input = require("./input");
 const FileContext = require("./fileContext");
