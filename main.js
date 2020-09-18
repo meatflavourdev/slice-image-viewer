@@ -19,9 +19,8 @@ app.on("activate-with-no-open-windows", function () {
 
 app.on("ready", function () {
   //Process input from command line arguments on init
-  //let inputPath = input.getInitPath();
   let inputContext = new FileContext(input.getInitPath());
-  console.log(inputContext);
+  console.log(inputContext); //Print fileContext
 
   mainWindow = createMainWindow();
 
