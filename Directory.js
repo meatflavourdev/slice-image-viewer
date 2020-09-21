@@ -7,9 +7,10 @@ class Directory {
   constructor(inputPath) {
     if (!inputPath) throw new Error("Directory: Input path is empty"); // Throw Error on emput input
 
-    let existsType = input.exists(inputPath);
+    let existsType = input.exists(inputPath); //Check if the inputPath exists and get the type
     this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath);
-    if (existsType === "file") this.inputFile = path.basename(inputPath);
+    this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath); //Get the inputDir string based on path type
+    if (existsType === "file") this.inputFile = path.basename(inputPath); //Get inputFile if path type is a file
 
     if (!this.getFiles())
       throw new Error("Directory: No supported files found in directory");
