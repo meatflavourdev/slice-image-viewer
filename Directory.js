@@ -8,7 +8,7 @@ class Directory {
     if (!inputPath) throw new Error("Directory: Input path is empty"); // Throw Error on emput input
 
     let existsType = input.exists(inputPath); //Check if the inputPath exists and get the type
-    this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath);
+    if (!existsType) throw new Error("Directory: Input path does not exist");
     this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath); //Get the inputDir string based on path type
     if (existsType === "file") this.inputFile = path.basename(inputPath); //Get inputFile if path type is a file
 
