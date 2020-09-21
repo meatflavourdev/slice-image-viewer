@@ -1,6 +1,7 @@
 const jetpack = require("fs-jetpack");
 const path = require("path");
 const input = require("./input");
+const Image = require("./Image");
 
 class Directory {
   constructor(inputPath) {
