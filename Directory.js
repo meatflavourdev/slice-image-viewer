@@ -10,13 +10,16 @@ class Directory {
     this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath);
     if (existsType === "file") this.inputFile = path.basename(inputPath);
 
-    if (!input.isDirectory(this.inputDir))
+    if (!this.getFiles())
       throw new Error("Directory: No supported files found in directory");
 
+  getFiles() {
     this.fileArray = jetpack
       .list(this.inputDir)
       .filter(input.isDisplayableImage);
     //.map((fileName) => path.join(this.inputDir, fileName));
+    return (this.fileArray.length) ? true : false;
+  }
 
     this.images = new Map();
 
@@ -27,8 +30,6 @@ class Directory {
     } else if (this.fileArray.length) {
       this.index = 0;
       this.inputFile = path.basename(this.fileArray[0]);
-    } else {
-      throw new Error("No supported files found in directory");
     }
 
     return this;
