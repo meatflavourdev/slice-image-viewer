@@ -18,7 +18,7 @@ class Directory {
       .filter(input.isDisplayableImage);
     //.map((fileName) => path.join(this.inputDir, fileName));
 
-    this.files = new Map();
+    this.images = new Map();
 
     // Calculate index
     if (this.fileArray.length && this.inputFile) {
