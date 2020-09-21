@@ -18,3 +18,5 @@ class Image {
     return this._dimensions;
   }
 }
+
+module.exports = Image;
