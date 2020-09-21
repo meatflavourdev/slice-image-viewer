@@ -16,6 +16,11 @@ class Directory {
       throw new Error("Directory: No supported files found in directory");
 
     this.getImages();
+    this.getIndex();
+
+    return this;
+  }
+
   getFiles() {
     this.fileArray = jetpack
       .list(this.inputDir)
@@ -29,6 +34,7 @@ class Directory {
     return true;
   }
 
+  getIndex() {
     // Calculate index
     if (this.fileArray.length && this.inputFile) {
       //this.index = this.fileArray.indexOf(path.join(this.inputDir, this.inputFile));
@@ -37,8 +43,7 @@ class Directory {
       this.index = 0;
       this.inputFile = path.basename(this.fileArray[0]);
     }
-
-    return this;
+    return true;
   }
 }
 
