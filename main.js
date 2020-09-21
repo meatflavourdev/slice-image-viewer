@@ -19,13 +19,13 @@ app.on("activate-with-no-open-windows", function () {
 
 app.on("ready", function () {
   //Process input from command line arguments on init
-  let inputContext = new FileContext(input.getInitPath());
-  console.log(inputContext); //Print fileContext
+  let fileContext = new FileContext(input.getInitPath());
+  console.log(fileContext); //Print fileContext
 
   mainWindow = createMainWindow();
 
   mainWindow.webContents.on("did-finish-load", () => {
-    mainWindow.webContents.send("file-context-data", inputContext);
+    mainWindow.webContents.send("file-context-data", fileContext);
   });
 
   if (process.env.NODE_ENV === "development") {
