@@ -4,14 +4,14 @@ const input = require("./input");
 
 class Directory {
   constructor(inputPath) {
-    if (!inputPath) throw new Error("Directory path is empty");
+    if (!inputPath) throw new Error("Directory: Input path is empty"); // Throw Error on emput input
 
     let existsType = input.exists(inputPath);
     this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath);
     if (existsType === "file") this.inputFile = path.basename(inputPath);
 
     if (!input.isDirectory(this.inputDir))
-      throw new Error("Directory not found or not resolved");
+      throw new Error("Directory: No supported files found in directory");
 
     this.fileArray = jetpack
       .list(this.inputDir)
