@@ -13,7 +13,7 @@ app.on("window-all-closed", function () {
 
 app.on("ready", function () {
   let fileContext = new FileContext(input.getInitPath()); // Get command line input and build corresponding FileContext object
-  let fileTitle = fileContext.directory.fileArray[fileContext.directory.index];
+  let fileTitle = fileContext.directory.files[fileContext.directory.index];
   let fileDimesions = fileContext.directory.images
     .get(fileTitle)
     .dimensions(); // Get dimensions for initial image
@@ -22,12 +22,12 @@ app.on("ready", function () {
   mainWindow = createMainWindow(currentDisplay, fileDimesions, fileTitle);
 
   mainWindow.webContents.on("did-finish-load", () => {
-    mainWindow.webContents.send("file-context-data", fileContext);
+    mainWindow.webContents.send("file-context-data", fileContext.directory);
     mainWindow.webContents.send("file-size", fileDimesions);
   });
 
   if (process.env.NODE_ENV === "development") {
-    //mainWindow.openDevTools();
+    mainWindow.openDevTools();
   }
 });
 
