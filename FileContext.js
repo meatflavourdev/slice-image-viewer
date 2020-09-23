@@ -3,6 +3,7 @@ const path = require("path");
 const input = require("./input");
 const Directory = require("./Directory");
 
+// @todo This object appears to be redundant, should it be removed in favour of Directory being used directly?
 class FileContext {
   constructor(inputPath) {
     if (!inputPath) throw new Error("FileContext: Input path is empty");
