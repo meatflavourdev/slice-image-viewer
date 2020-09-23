@@ -13,6 +13,5 @@ ipcRenderer.on('file-size', (e, data) => {
   imageView.style.setProperty('--image-height', data.height + 'px');
   setTimeout(() => {
     imageView.classList.add('transition');
-  }, 50)
-  
+  }, 50);
 });
