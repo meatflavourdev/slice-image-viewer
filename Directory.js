@@ -10,8 +10,11 @@ class Directory {
     let existsType = input.exists(inputPath); //Check if the inputPath exists and get the type
     if (!existsType) throw new Error("Directory: Input path does not exist");
     this.inputDir = existsType === "dir" ? inputPath : path.dirname(inputPath); //Get the inputDir string based on path type
-    if (existsType === "file") this.inputFile = path.basename(inputPath); //Get inputFile if path type is a file
-
+    if (existsType === "file") {
+      if (!input.isDisplayableImage(inputPath))
+        throw new Error("Directory: File type not supported");
+      this.inputFile = path.basename(inputPath); // Get filename if inputPath is a supported file
+    }
     if (!this.getFiles())
       throw new Error("Directory: No supported files found in directory");
 
