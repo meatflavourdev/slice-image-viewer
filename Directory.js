@@ -22,26 +22,29 @@ class Directory {
   }
 
   getFiles() {
-    this.fileArray = jetpack
-      .list(this.inputDir)
-      .filter(input.isDisplayableImage);
+    this.files = jetpack.list(this.inputDir).filter(input.isDisplayableImage);
     //.map((fileName) => path.join(this.inputDir, fileName));
-    return (this.fileArray.length) ? true : false;
+    return this.files.length ? true : false;
   }
 
   getImages() {
-    this.images = new Map(this.fileArray.map((fileName) => [fileName, new File(fileName, this.inputDir)]));
+    this.images = new Map(
+      this.files.map((fileName) => [
+        fileName,
+        new File(fileName, this.inputDir),
+      ])
+    );
     return true;
   }
 
   getIndex() {
     // Calculate index
-    if (this.fileArray.length && this.inputFile) {
+    if (this.files.length && this.inputFile) {
       //this.index = this.fileArray.indexOf(path.join(this.inputDir, this.inputFile));
-      this.index = this.fileArray.indexOf(this.inputFile);
-    } else if (this.fileArray.length) {
+      this.index = this.files.indexOf(this.inputFile);
+    } else if (this.files.length) {
       this.index = 0;
-      this.inputFile = path.basename(this.fileArray[0]);
+      this.inputFile = path.basename(this.files[0]);
     }
     return true;
   }
