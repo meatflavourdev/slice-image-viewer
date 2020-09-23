@@ -1,7 +1,7 @@
 const jetpack = require("fs-jetpack");
 const path = require("path");
 const input = require("./input");
-const Image = require("./Image");
+const File = require("./File");
 
 class Directory {
   constructor(inputPath) {
@@ -30,7 +30,7 @@ class Directory {
   }
 
   getImages() {
-    this.images = new Map(this.fileArray.map((fileName) => [fileName, new Image(fileName, this.inputDir)]));
+    this.images = new Map(this.fileArray.map((fileName) => [fileName, new File(fileName, this.inputDir)]));
     return true;
   }
 
