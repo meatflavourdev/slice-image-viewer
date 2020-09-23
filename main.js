@@ -11,12 +11,6 @@ app.on("window-all-closed", function () {
   }
 });
 
-app.on("activate-with-no-open-windows", function () {
-  if (!mainWindow) {
-    mainWindow = createMainWindow();
-  }
-});
-
 app.on("ready", function () {
   //Process input from command line arguments on init
   let fileContext = new FileContext(input.getInitPath());
@@ -30,5 +24,11 @@ app.on("ready", function () {
 
   if (process.env.NODE_ENV === "development") {
     mainWindow.openDevTools();
+* On macOS it's common to re-create a window in the app when the
+* dock icon is clicked and there are no other windows open.
+app.on("activate-with-no-open-windows", function () {
+  if (!mainWindow) {
+    mainWindow = createMainWindow();
   }
 });
+*/
