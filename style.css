@@ -52,3 +52,14 @@ body {
   transition: 0.5s ease-out all; 
   -webkit-transition: 0.5s ease-out all;
 }
+
+#uiControls {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 52px;
+  background: url(ui-controls-01.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
