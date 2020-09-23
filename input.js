@@ -23,7 +23,7 @@ module.exports = {
 
   isDisplayableImage: function (inputPath) {
     const ext = path.extname(inputPath).slice(1);
-    return ext && config.IMAGE_EXTENSIONS.indexOf(ext) > -1;
+    return ext && config.IMAGE_EXTENSIONS.indexOf(ext.toLowerCase()) > -1;
   },
 
   exists: function (inputPath) {
