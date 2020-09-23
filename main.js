@@ -1,7 +1,7 @@
 const { app, screen } = require("electron");
 const { createMainWindow } = require("./window");
 const input = require("./input");
-const FileContext = require("./fileContext");
+const FileContext = require("./FileContext");
 
 let mainWindow = null;
 
