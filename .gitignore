@@ -1,3 +1,6 @@
 node_modules
+dist
+example
 yarn.lock
 yarn-error.log
+*.log
