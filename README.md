@@ -8,9 +8,16 @@ Version 0.1.0-alpha
 Slice is being developed with the following goals in mind:
 
 - **Aesthetic** - Slice aims to provide a simple and graceful UX and a slick, professional UI.
+
 - **Speed** - The goal of the project is to provide a desktop class experience wherein the application should open, function, and close quickly and smoothly
+
 - **Compatibility** - Expanding on the capabilities of Picasa Photo Viewer, Slice is intended to support a variety of image formats not supported by its predecessor including animated GIFs, JFIF, and WEBP.
+
 - **Organization** - In addition to a simple image viewer, Slice will allow user to scroll through all images in a directory and contain a directory view for easier browsing.
+
+  
+
+![screenshot_dark03](C:\Data\Projects\slice-image-viewer\slice-image-viewer\screenshot_dark03.png)
 
 
 
