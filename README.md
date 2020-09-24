@@ -1,45 +1,59 @@
-# electron-quick-start
+# **Slice Image Viewer**
 
-**Clone and run for a quick way to see Electron in action.**
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
+## 👋 About Slice
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+**Slice is an image viewer inspired by the deprecated Picasa Photo Viewer and built with electron from cross-platform operation on *Windows, macOS, and Linux*.**
 
-A basic Electron application needs just these files:
+Slice is being developed with the following goals in mind:
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+- **Aesthetic** - Slice aims to provide a simple and graceful UX and a slick, professional UI.
+- **Speed** - The goal of the project is to provide a desktop class experience wherein the application should open, function, and close quickly and smoothly
+- **Compatibility** - Expanding on the capabilities of Picasa Photo Viewer, Slice is intended to support a variety of image formats not supported by its predecessor including animated GIFs, JFIF, and WEBP.
+- **Organization** - In addition to a simple image viewer, Slice will allow user to scroll through all images in a directory and contain a directory view for easier browsing.
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
 
-## To Use
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+## 💾 To Install
 
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
+### Install
+
+```
+$ yarn
 ```
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+### Run
 
-## Resources for Learning Electron
+```
+$ yarn start
+```
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+### Package
 
-## License
+```
+$ yarn dist
+```
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+Builds the app for OS X, Linux, and Windows, using [electron-builder](https://github.com/electron-userland/electron-builder).
+
+
+
+## 📄 License
+
+#### GNU General Public License v3.0 (GNU GPLv3) 
+© Copyright Jeremy Dombrowski 2020
+
+##### About GNU GPLv3
+
+Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+
+##### How you may use the works therein
+
+| Permissions      | Conditions                     | Limitations |
+| :--------------- | :----------------------------- | :---------- |
+| 🟢 Commercial use | 🔵 Disclose source              | 🔴 Liability |
+| 🟢 Distribution   | 🔵 License and copyright notice | 🔴 Warranty  |
+| 🟢 Modification   | 🔵 Same license                 |             |
+| 🟢 Patent use     | 🔵 State changes                |             |
+| 🟢 Private use    |                                |             |
+
