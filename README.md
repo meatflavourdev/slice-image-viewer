@@ -17,7 +17,7 @@ Slice is being developed with the following goals in mind:
 
   
 
-![screenshot_dark03](C:\Data\Projects\slice-image-viewer\slice-image-viewer\screenshot_dark03.png)
+![screenshot_dark03](https://raw.githubusercontent.com/jfelixdev/slice-image-viewer/master/screenshot_dark03.png)
 
 
 
