@@ -3,7 +3,7 @@ Version 0.1.0-alpha
 
 ## 👋 About Slice
 
-**Slice is an image viewer inspired by the deprecated Picasa Photo Viewer and built with electron from cross-platform operation on *Windows, macOS, and Linux*.**
+**Slice Image Viewer is inspired by the deprecated Picasa Photo Viewer and built with electron from cross-platform operation on *Windows, macOS, and Linux*.**
 
 Slice is being developed with the following goals in mind:
 
